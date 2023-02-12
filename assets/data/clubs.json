@@ -1,0 +1,100 @@
+[{
+    "id": "1",
+    "name": "Junction Lifestyle",
+    "operatingTime": "12pm to 2am",
+    "operatingDays": "Thursday to Sunday",
+    "rating": 4.1,
+    "image": "https://10619-2.s.cdn12.com/rests/original/101_504852748.jpg",
+    "drinks": [
+        {
+            "name": "Savanah",
+            "description": "500ml of Ice Cold Savanah",
+            "price": 31.99,
+            "image": "https://10619-2.s.cdn12.com/rests/original/101_504852748.jpg"
+        },
+        {
+            "name": "Savanah",
+            "description": "500ml of Ice Cold Savanah",
+            "price": 31.99,
+            "image": "https://10619-2.s.cdn12.com/rests/original/101_504852748.jpg"
+        },
+        {
+            "name": "Savanah",
+            "description": "500ml of Ice Cold Savanah",
+            "price": 31.99,
+            "image": "https://10619-2.s.cdn12.com/rests/original/101_504852748.jpg"
+        },
+        {
+            "name": "Savanah",
+            "description": "500ml of Ice Cold Savanah",
+            "price": 31.99,
+            "image": "https://10619-2.s.cdn12.com/rests/original/101_504852748.jpg"
+        }
+    ]
+}, {
+    "id": "2",
+    "name": "Dukuza Lifestyle",
+    "operatingTime": "12pm to 2am",
+    "operatingDays": "Friday to Saturday",
+    "rating": 4.3,
+    "image": "https://lh3.googleusercontent.com/p/AF1QipP4j3e4gFKKdSg0wbD8vAHbv0kdEbQmDznPd_U=s680-w680-h510",
+    "drinks": [
+        {
+            "name": "Sminorff 1818",
+            "description": "500ml of Ice Cold Sminorff 1818",
+            "price": 31.99,
+            "image": "https://10619-2.s.cdn12.com/rests/original/101_504852748.jpg"
+        },
+        {
+            "name": "Sminorff 1818",
+            "description": "500ml of Ice Cold Sminorff 1818",
+            "price": 31.99,
+            "image": "https://10619-2.s.cdn12.com/rests/original/101_504852748.jpg"
+        },
+        {
+            "name": "Sminorff 1818",
+            "description": "500ml of Ice Cold Sminorff 1818",
+            "price": 31.99,
+            "image": "https://10619-2.s.cdn12.com/rests/original/101_504852748.jpg"
+        },
+        {
+            "name": "Sminorff 1818",
+            "description": "500ml of Ice Cold Sminorff 1818",
+            "price": 31.99,
+            "image": "https://10619-2.s.cdn12.com/rests/original/101_504852748.jpg"
+        }
+    ]
+}, {
+    "id": "3",
+    "name": "The Hype Club",
+    "operatingTime": "12pm to 2am",
+    "operatingDays": "Friday to Sunday",
+    "rating": 4.5,
+    "image": "https://lh3.googleusercontent.com/p/AF1QipOODwNt0mH-bHaobYgRb4WjrdmePRRrsZlZRaI=s680-w680-h510",
+    "drinks": [
+        {
+            "name": "Heineken",
+            "description": "500ml of Ice Cold Heineken",
+            "price": 31.99,
+            "image": "https://lh3.googleusercontent.com/p/AF1QipP4j3e4gFKKdSg0wbD8vAHbv0kdEbQmDznPd_U=s680-w680-h510"
+        },
+        {
+            "name": "Heineken",
+            "description": "500ml of Ice Cold Heineken",
+            "price": 31.99,
+            "image": "https://lh3.googleusercontent.com/p/AF1QipP4j3e4gFKKdSg0wbD8vAHbv0kdEbQmDznPd_U=s680-w680-h510"
+        },
+        {
+            "name": "Heineken",
+            "description": "500ml of Ice Cold Heineken",
+            "price": 31.99,
+            "image": "https://lh3.googleusercontent.com/p/AF1QipP4j3e4gFKKdSg0wbD8vAHbv0kdEbQmDznPd_U=s680-w680-h510"
+        },
+        {
+            "name": "Heineken",
+            "description": "500ml of Ice Cold Heineken",
+            "price": 31.99,
+            "image": "https://lh3.googleusercontent.com/p/AF1QipP4j3e4gFKKdSg0wbD8vAHbv0kdEbQmDznPd_U=s680-w680-h510"
+        }
+    ]
+}]
