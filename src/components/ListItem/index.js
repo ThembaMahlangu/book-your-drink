@@ -1,12 +1,14 @@
 import { View, StyleSheet, Text, Image } from "react-native";
-import clubs from "../../../assets/data/clubs.json";
 
-const DrinksListItem = ({ drinks }) => {
+const DrinksListItem = ({ drink }) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.name}>{drinks.name}</Text>
-            <Text style={styles.description}>{drinks.description}</Text>
-            <Text style={styles.price}>{drinks.price}</Text>
+            <View style={{flex: 1}}>
+            <Text style={styles.name}>{drink.name}</Text>
+            <Text style={styles.description} numberOfLines={2}>{drink.description}</Text>
+            <Text style={styles.price}>{drink.price}</Text>
+            </View>
+            {drink.image && (<Image source={{ uri: drink.image }} style={styles.image}/>)}
         </View>
     )
 };
@@ -18,6 +20,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         borderBottomColor: "lightgrey",
         borderBottomWidth: 1,
+        flexDirection: "row",
     },
     name: {
         fontWeight: "600",
@@ -31,6 +34,10 @@ const styles = StyleSheet.create({
     price: {
         fontSize: 16,
     },
+    image: {
+        height: 75,
+        aspectRatio: 1,
+    }
 });
 
 export default DrinksListItem;
