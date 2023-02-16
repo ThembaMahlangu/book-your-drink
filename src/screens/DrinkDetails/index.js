@@ -15,7 +15,7 @@ const DrinkDetailsScreen = () => {
     };
 
     const onPlus = () => {
-        setQuantity(quantity + 1)
+        setQuantity(quantity + 1);
     };
 
     return (
@@ -25,7 +25,7 @@ const DrinkDetailsScreen = () => {
             <View style={styles.separator}/>
             <View style={styles.row}>
                 <AntDesign name="minuscircleo" size={60} color={"black"} onPress={onMinus}/>
-                <Text style={styles.quantity}>1</Text>
+                <Text style={styles.quantity}>{quantity}</Text>
                 <AntDesign name="pluscircleo" size={60} color={"black"} onPress={onPlus}/>
             </View>
         </View>
