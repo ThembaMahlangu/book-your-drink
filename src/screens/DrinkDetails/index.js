@@ -18,6 +18,10 @@ const DrinkDetailsScreen = () => {
         setQuantity(quantity + 1);
     };
 
+    const getTotal = () => {
+        return (drink.price * quantity).toFixed(2);
+    };
+
     return (
         <View style={styles.page}>
             <Text style={styles.title}>{drink.name}</Text>
@@ -27,6 +31,10 @@ const DrinkDetailsScreen = () => {
                 <AntDesign name="minuscircleo" size={60} color={"black"} onPress={onMinus}/>
                 <Text style={styles.quantity}>{quantity}</Text>
                 <AntDesign name="pluscircleo" size={60} color={"black"} onPress={onPlus}/>
+            </View>
+
+            <View style={styles.button}>
+                <Text onPress={[]} style={styles.buttonText}>Add {quantity} to bucket &#8226; R{getTotal()}</Text>
             </View>
         </View>
     )
@@ -62,6 +70,17 @@ const styles = StyleSheet.create ({
         fontSize: 25,
         // fontWeight: "bold",
         marginHorizontal: 20,
+    },
+    button: {
+        backgroundColor: "black",
+        marginTop: "auto",
+        padding: 20,
+        alignItems: "center",
+    },
+    buttonText: {
+        color: "white",
+        fontWeight: "600",
+        fontSize: 18,
     }
 });
 
