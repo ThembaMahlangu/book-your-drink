@@ -1,8 +1,14 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const ClubItem = ({ club }) => {
+  const navigation = useNavigation();
+
+  const onPress = () => {
+    navigation.navigate('Club', { id: club.id });
+  };
   return (
-    <View style={styles.clubContainer}>
+    <Pressable onPress={onPress} style={styles.clubContainer}>
         <Image 
         source={{ uri: club.image }} 
         style={styles.image}/>
@@ -17,7 +23,7 @@ const ClubItem = ({ club }) => {
             </View>
             
         </View>
-      </View>
+      </Pressable>
   );
 };
 

@@ -1,27 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import Bucket from './src/screens/Bucket';
-import ClubDetailsPage from './src/screens/ClubDetails';
-import DrinkDetailsScreen from './src/screens/DrinkDetails';
-import HomeScreen from './src/screens/homescreen';
-import OrderScreen from './src/screens/OrdersScreen';
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigator from './src/navigation';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <OrderScreen/>
+    <NavigationContainer>
+        <RootNavigator/>
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    // padding: 10,
-    // marginVertical: 30, // Temporary Solution
-  },
-});

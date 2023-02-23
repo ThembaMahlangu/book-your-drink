@@ -1,26 +1,14 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import clubs from "../../../assets/data/clubs.json";
-import { AntDesign } from "@expo/vector-icons";
-import { useState } from "react";
+import BucketDrinkItem from "../../components/BucketDishItem";
 
 const club = clubs[0];
 
-const BucketDrinkItem = ({ bucketDrink }) => {
-    return (
-        <View style={styles.row}>
-            <View style={styles.quantityContainer}>
-                <Text>1</Text>
-            </View>
-            <Text style={{fontWeight: "600"}}>{bucketDrink.name}</Text>
-            <Text style={{marginLeft: "auto"}}>R {bucketDrink.price}</Text>
-        </View>
-    )
-};
 
 const Bucket = () => {
     return (
         <View style={styles.page}>
-            <Text style={styles.title}>{club.name}</Text>
+            <Text style={styles.name}>{club.name}</Text>
             <Text style={{fontWeight: "bold", marginTop: 20, fontSize: 19}}>Your items</Text>
             
             <FlatList
@@ -43,7 +31,7 @@ const styles = StyleSheet.create ({
         paddingVertical: 30,
         padding: 10,
     },
-    title: {
+    name: {
         fontSize: 24,
         fontWeight: "600",
         marginVertical: 10,

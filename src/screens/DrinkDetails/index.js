@@ -1,12 +1,14 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
 import clubs from "../../../assets/data/clubs.json";
 import { AntDesign } from "@expo/vector-icons";
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native"
 
 const drink = clubs[0].drinks[0];
 
 const DrinkDetailsScreen = () => {
     const [quantity, setQuantity] = useState(1);
+    const navigation = useNavigation();
 
     const onMinus = () => {
         if(quantity > 1) {
@@ -33,9 +35,9 @@ const DrinkDetailsScreen = () => {
                 <AntDesign name="pluscircleo" size={60} color={"black"} onPress={onPlus}/>
             </View>
 
-            <View style={styles.button}>
-                <Text onPress={[]} style={styles.buttonText}>Add {quantity} to bucket &#8226; R{getTotal()}</Text>
-            </View>
+            <Pressable onPress={() => navigation.navigate("Bucket")} style={styles.button}>
+                <Text style={styles.buttonText}>Add {quantity} to bucket &#8226; R{getTotal()}</Text>
+            </Pressable>
         </View>
     )
 };
