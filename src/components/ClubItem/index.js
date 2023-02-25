@@ -1,6 +1,8 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import DefaultImage from '../../../assets/images/default.png';
+
 const ClubItem = ({ club }) => {
   const navigation = useNavigation();
 
@@ -10,7 +12,7 @@ const ClubItem = ({ club }) => {
   return (
     <Pressable onPress={onPress} style={styles.clubContainer}>
         <Image 
-        source={{ uri: club.image }} 
+        source={{ uri: club.image.startsWith("http") ? club.image : DefaultImage }} 
         style={styles.image}/>
         <View style={styles.row}>
             <View>

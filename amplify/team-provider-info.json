@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bookyourdrink-staging-203543-authRole",
+      "UnauthRoleArn": "arn:aws:iam::021228793807:role/amplify-bookyourdrink-staging-203543-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::021228793807:role/amplify-bookyourdrink-staging-203543-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-bookyourdrink-staging-203543-deployment",
+      "UnauthRoleName": "amplify-bookyourdrink-staging-203543-unauthRole",
+      "StackName": "amplify-bookyourdrink-staging-203543",
+      "StackId": "arn:aws:cloudformation:us-east-1:021228793807:stack/amplify-bookyourdrink-staging-203543/a54c0de0-b3b9-11ed-978b-0e41b4c5ce19",
+      "AmplifyAppId": "d1r3zyg5y26ubr"
+    },
+    "categories": {
+      "auth": {
+        "bookyourdrink": {}
+      }
+    }
+  }
+}

@@ -1,8 +1,16 @@
 import { FlatList, StyleSheet, View } from 'react-native';
 import ClubItem from '../../components/ClubItem/index';
-import clubs from '../../../assets/data/clubs.json';
+import React, { useEffect, useState } from 'react';
+import { DataStore } from 'aws-amplify';
+import { Club } from '../../models';
 
 export default function HomeScreen() {
+  const [clubs, setClubs] = useState([]);
+
+  useEffect(() => {
+    DataStore.query(Club).then((results) => { setClubs(results) });
+  }, []);
+
   return (
     <View style={styles.page}>
       <FlatList 

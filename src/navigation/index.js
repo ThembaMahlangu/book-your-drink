@@ -1,10 +1,11 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/homescreen';
 import DrinkDetailsScreen from '../screens/DrinkDetails';
 import ClubDetailsPage from '../screens/ClubDetails';
 import OrderScreen from '../screens/OrdersScreen';
 import OrderDetails from '../screens/OrderDetails';
+// import Profile from '../screens/ProfileScreen';
 import Bucket from '../screens/Bucket';
 import {Foundation, FontAwesome5, MaterialIcons} from '@expo/vector-icons';
 
@@ -18,16 +19,16 @@ const RootNavigator = () => {
     );
     };
 
-    const Tab = createMaterialBottomTabNavigator();
+    const Tab = createBottomTabNavigator();
 
     const HomeTabs = () => {
         return (
-            <Tab.Navigator barStyle={{ backgroundColor: "white"}}>
+            <Tab.Navigator screenOptions={{headerShown: false}} barStyle={{ backgroundColor: "white"}}>
                 <Tab.Screen name="Home" component={HomeStackNavigator} options={{ tabBarIcon: ({color}) => (<Foundation name="home" size={24} color={color}/>),}} />
                 <Tab.Screen name="Orders" component={OrderStackNavigator} 
                 options={{ tabBarIcon: ({color}) => (<MaterialIcons name="list-alt" size={24} color={color}/>),}}
                 />
-                <Tab.Screen name="Profile" component={OrderScreen} 
+                <Tab.Screen name="Profile" component={OrderDetails} 
                 options={{ tabBarIcon: ({color}) => (<FontAwesome5 name="user-alt" size={24} color={color}/>),}}
                 />
             </Tab.Navigator>
@@ -40,7 +41,7 @@ const HomeStackNavigator = () => {
     return (
         <HomeStack.Navigator>
         <HomeStack.Screen name="Clubs" component={HomeScreen}/>
-        <HomeStack.Screen name="Club" component={ClubDetailsPage}/>
+        <HomeStack.Screen name="Club" component={ClubDetailsPage}  options={{headerShown: false}}/>
         <HomeStack.Screen name="Drink" component={DrinkDetailsScreen}/>
         <HomeStack.Screen name="Bucket" component={Bucket}/>
         </HomeStack.Navigator>

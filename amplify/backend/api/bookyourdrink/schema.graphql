@@ -1,0 +1,22 @@
+type Drink @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  image: String
+  description: String
+  price: Float!
+  clubID: ID! @index(name: "byClub")
+}
+
+type Club @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  image: String!
+  operatingDays: String!
+  operatingTime: String!
+  rating: Float
+  address: String!
+  lat: Float
+  lng: Float
+  Drinks: [Drink!] @hasMany(indexName: "byClub", fields: ["id"])
+}
+ 

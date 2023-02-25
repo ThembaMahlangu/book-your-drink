@@ -9,7 +9,7 @@ const DrinksListItem = ({ drink }) => {
             <View style={{flex: 1}}>
             <Text style={styles.name}>{drink.name}</Text>
             <Text style={styles.description} numberOfLines={2}>{drink.description}</Text>
-            <Text style={styles.price}>{drink.price}</Text>
+            <Text style={styles.price}>R {drink.price}</Text>
             </View>
             {drink.image && (<Image source={{ uri: drink.image }} style={styles.image}/>)}
         </Pressable>
