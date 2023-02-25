@@ -1,14 +1,24 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
-import clubs from "../../../assets/data/clubs.json";
+import { View, Text, StyleSheet, Pressable, ActivityIndicator } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { useState } from "react";
-import { useNavigation } from "@react-navigation/native"
-
-const drink = clubs[0].drinks[0];
+import { useState, useEffect } from "react";
+import { useNavigation } from "@react-navigation/native";
+import Drink from "../../models";
+import { DataStore } from "aws-amplify";
+import { useRoute } from "@react-navigation/native";
 
 const DrinkDetailsScreen = () => {
+    const [drink, setDrink] = useState(null);
     const [quantity, setQuantity] = useState(1);
     const navigation = useNavigation();
+
+    const route = useRoute();
+    const id = route.params?.id;
+
+    useEffect(() => {
+        if (id) {
+            DataStore.query(Drink, id).then(setDrink);
+        }
+    }, [id]);
 
     const onMinus = () => {
         if(quantity > 1) {
@@ -23,6 +33,10 @@ const DrinkDetailsScreen = () => {
     const getTotal = () => {
         return (drink.price * quantity).toFixed(2);
     };
+
+    if(!drink) {
+        return <ActivityIndicator size="large" color="gray"/>;
+    }
 
     return (
         <View style={styles.page}>

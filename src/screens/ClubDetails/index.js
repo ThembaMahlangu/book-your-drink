@@ -19,13 +19,16 @@ const ClubDetailsPage = () => {
     const id = route.params?.id;
 
     useEffect(() => {
+        if (!id) {
+            return;
+        }
         DataStore.query(Club, id)
             .then(setClub)
             .catch(error => console.log('Error fetching club:', error));
         DataStore.query(Drink, drink => drink.clubID.eq(id))
             .then(setDrinks)
             .catch(error => console.log('Error fetching drinks:', error));
-    },[]);    
+    },[id]);    
 
     if (!club) {
         return <ActivityIndicator size={"large"} color="gray"/>;

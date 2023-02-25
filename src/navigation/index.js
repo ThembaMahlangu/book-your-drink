@@ -5,16 +5,23 @@ import DrinkDetailsScreen from '../screens/DrinkDetails';
 import ClubDetailsPage from '../screens/ClubDetails';
 import OrderScreen from '../screens/OrdersScreen';
 import OrderDetails from '../screens/OrderDetails';
-// import Profile from '../screens/ProfileScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 import Bucket from '../screens/Bucket';
 import {Foundation, FontAwesome5, MaterialIcons} from '@expo/vector-icons';
+import { useAuthContext } from '../context/AuthContext';
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
+    const { dbUser } = useAuthContext();
+
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
+            {dbUser ? (
         <Stack.Screen name="HomeTabs" component={HomeTabs} />
+        ) : (
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        )}
         </Stack.Navigator>
     );
     };
@@ -28,7 +35,7 @@ const RootNavigator = () => {
                 <Tab.Screen name="Orders" component={OrderStackNavigator} 
                 options={{ tabBarIcon: ({color}) => (<MaterialIcons name="list-alt" size={24} color={color}/>),}}
                 />
-                <Tab.Screen name="Profile" component={OrderDetails} 
+                <Tab.Screen name="Profile" component={ProfileScreen} 
                 options={{ tabBarIcon: ({color}) => (<FontAwesome5 name="user-alt" size={24} color={color}/>),}}
                 />
             </Tab.Navigator>

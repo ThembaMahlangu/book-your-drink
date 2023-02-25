@@ -14,8 +14,8 @@ export default StyleSheet.create({
         marginVertical: 10,
     },
     subtitle: {
-        color: "grey",
-        fontSize: 15,
+        color: "green",
+        fontSize: 17,
     },
     container: {
         margin: 10,

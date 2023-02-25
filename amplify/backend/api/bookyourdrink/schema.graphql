@@ -1,3 +1,52 @@
+enum OrderStatus {
+  NEW
+  PREPARING
+  READY_FOR_SERVING
+  SERVED
+  COMPLETED
+}
+
+type OrderDrink @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  quantit: Int!
+  Drink: Drink @hasOne
+  orderID: ID! @index(name: "byOrder")
+}
+
+type Order @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  Club: Club @hasOne
+  total: Float!
+  status: OrderStatus!
+  OrderDrinks: [OrderDrink] @hasMany(indexName: "byOrder", fields: ["id"])
+}
+
+type BucketDrink @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  quantity: Int!
+  Drink: Drink @hasOne
+  bucketID: ID! @index(name: "byBucket")
+}
+
+type Bucket @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  BucketDrinks: [BucketDrink] @hasMany(indexName: "byBucket", fields: ["id"])
+  userID: ID! @index(name: "byUser")
+  clubID: ID! @index(name: "byClub")
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  address: String!
+  lat: Float!
+  lng: Float!
+  Orders: [Order] @hasMany(indexName: "byUser", fields: ["id"])
+  Buckets: [Bucket] @hasMany(indexName: "byUser", fields: ["id"])
+  sub: String!
+}
+
 type Drink @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
@@ -18,5 +67,6 @@ type Club @model @auth(rules: [{allow: public}]) {
   lat: Float
   lng: Float
   Drinks: [Drink!] @hasMany(indexName: "byClub", fields: ["id"])
+  Buckets: [Bucket] @hasMany(indexName: "byClub", fields: ["id"])
 }
  
